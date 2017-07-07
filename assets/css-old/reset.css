@@ -1,0 +1,520 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}									
+
+article, aside, figure, footer, header, hgroup, nav, section {display: block;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+/*img,*/
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+ 
+/* Accessible focus treatment
+	people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {outline: none;}
+
+small {font-size: 85%;}
+
+strong, th {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't screw with your line-heights
+	gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+/*sup {top: -0.5em;}
+sub {bottom: -0.25em;}*/
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+input[type=button], 
+input[type=submit], 
+button {cursor: pointer; border: none; }
+
+/*input[type=button]:hover, 
+input[type=submit]:hover, 
+button:hover{ color:#fff; text-decoration:none; border: none;  background-color:#fff; color:#050505; text-decoration:none; border: 3px solid #050505; box-sizing:border-box; line-height:56px; height:56px; display: block;}
+
+input[type=button]:hover:before, 
+input[type=submit]:hover:before, 
+button:hover:before { border: 3px solid #050505; content: ""; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; height:56px; width:356px; background: red; }*/
+
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover */
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+
+
+/* Ok, this is where the fun starts.
+-------------------------------------------------------------------------------*/
+
+/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
+body {font: 13px Helmet, Freesans, sans-serif;}
+
+/* using local fonts? make sure to read up on Paul Irish's 
+	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
+
+/* we like off-black for text */
+body, select, input, textarea {color: #333;}
+
+a { font-family: 'Roboto', sans-serif; font-weight:400; color: #2196F3; text-decoration:none; transition:all 0.3s ease 0s;}
+a:hover { color:#1565c0; text-decoration:none; }
+a:focus { outline:none; }
+
+
+/* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{background: #62c0e8; color: #fff; text-shadow: none;}
+::selection {background: #62c0e8; color: #fff; text-shadow: none;} 
+
+/* j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: transparent;} 
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+	outline: none; -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; -webkit-appearance: none; box-sizing: border-box; width:100%; height:36px; border:1px solid rgba(0,0,0,0.12); background-color:#fff; font-family: 'Open Sans', sans-serif; font-weight:400; font-size:13px; color:rgba(0,0,0,0.87); line-height:36px; padding:0 10px; }
+
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus { /*box-shadow: inset 0 0 0 2px #ff5e3a, 0 0 1px rgba(0, 0, 0, 0);*/ }
+
+textarea { line-height:normal; padding:5px 10px;  }
+input[type=checkbox] {  margin:0; padding:0; vertical-align:middle; }
+	
+input[type="button"], input[type="submit"], input[type="image"], input[type="reset"], button[type="button"] { -webkit-appearance: none; border:none; border-radius: 2px; background-color:#424242; font-family: 'Roboto', sans-serif; font-weight:400; font-size:14px; color:#fff; line-height:36px; padding:0 15px; text-transform:uppercase; margin:0; box-sizing:border-box; box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24); transition:all 0.6s ease 0s; }
+input[type="button"]:hover, input[type="submit"]:hover, input[type="image"]:hover, button[type="button"]:hover { background-color:#ff5722; }
+input[type="button"]:focus, input[type="submit"]:focus, input[type="image"]:focus, button[type="button"]:focus { outline:none; }
+
+select { -moz-appearance: none; -webkit-appearance: none; appearance: none; width:100%; height:38px; border:none; box-sizing:border-box; border:1px solid rgba(0,0,0,0.12); background: #fff url(../images/ic_arrow_drop_down_black_24dp_2x.png) no-repeat 98% center; background-size:24px 24px; font-family: 'Roboto', sans-serif; font-weight:400; font-size:13px; color:rgba(0,0,0,0.87); line-height:38px; padding:0 10px; box-sizing:border-box; }
+select option { border-bottom:1px solid rgba(0,0,0,0.12); padding:8px 15px; color:rgba(0,0,0,0.87); }
+select:focus { outline:none; }
+
+
+.form-radio,
+.form-group {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-inline > .form-group,
+.form-inline > .btn {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.form-help {
+  margin-top: 0.125rem /*2px*/;
+  margin-left: 0.125rem;
+  color: #b3b3b3;
+  font-size: 0.8rem;
+}
+.checkbox .form-help, .form-radio .form-help, .form-group .form-help {
+  position: absolute;
+  width: 100%;
+}
+.checkbox .form-help {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.form-radio .form-help {
+  padding-top: 0.25rem;
+  margin-top: -1rem;
+}
+
+.form-group input {
+  height: 1.9rem;
+}
+.form-group textarea {
+  resize: none;
+}
+.form-group select {
+  width: 100%;
+  font-size: 1rem;
+  height: 1.6rem;
+  padding: 0.125rem 0.125rem 0.0625rem;
+  background: none;
+  border: none;
+  line-height: 1.6;
+  box-shadow: none;
+}
+.form-group .control-label {
+  position: absolute;
+  top: 0.25rem;
+  pointer-events: none;
+  padding-left: 0.125rem;
+  z-index: 1;
+  color: rgba(0,0,0,0.54);
+  font-size: 13px;
+  font-weight: normal;
+  -webkit-transition: all 0.28s ease;
+  transition: all 0.28s ease;
+}
+.form-group .bar {
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  display: block;
+}
+.form-group .bar::before {
+  content: '';
+  height: 0.125rem;
+  width: 0;
+  left: 50%;
+  bottom: -0.0625rem;
+  position: absolute;
+  background: #ff5722;
+  -webkit-transition: left 0.28s ease, width 0.28s ease;
+  transition: left 0.28s ease, width 0.28s ease;
+  z-index: 2;
+}
+.form-group input,
+.form-group textarea {
+  display: block;
+  background: none;
+  padding: 0.125rem 0.125rem 0.0625rem;
+  font-size: 13px;
+  border-width: 0;
+  border-color: transparent;
+  line-height: 1.9;
+  width: 100%;
+  color: transparent;
+  -webkit-transition: all 0.28s ease;
+  transition: all 0.28s ease;
+  box-shadow: none;
+}
+.form-group input[type="file"] {
+  line-height: 1;
+}
+.form-group input[type="file"] ~ .bar {
+  display: none;
+}
+.form-group select,
+.form-group input:focus,
+.form-group input:valid,
+.form-group input.form-file,
+.form-group input.has-value,
+.form-group textarea:focus,
+.form-group textarea:valid,
+.form-group textarea.form-file,
+.form-group textarea.has-value {
+  color: #333;
+}
+.form-group select ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group input:valid ~ .control-label,
+.form-group input.form-file ~ .control-label,
+.form-group input.has-value ~ .control-label,
+.form-group textarea:focus ~ .control-label,
+.form-group textarea:valid ~ .control-label,
+.form-group textarea.form-file ~ .control-label,
+.form-group textarea.has-value ~ .control-label {
+  font-size: 0.8rem;
+  color: gray;
+  top: -1rem;
+  left: 0;
+}
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+.form-group select:focus ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group textarea:focus ~ .control-label {
+  color: #ff5722;
+}
+.form-group select:focus ~ .bar::before,
+.form-group input:focus ~ .bar::before,
+.form-group textarea:focus ~ .bar::before {
+  width: 100%;
+  left: 0;
+}
+
+.checkbox label,
+.form-radio label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 2rem;
+  text-align: left;
+  color: #333;
+  display: block;
+}
+.checkbox input,
+.form-radio input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+/*.radio {
+  margin-bottom: 1rem;
+}*/
+.radio .helper {
+  position: absolute;
+  top: -0.25rem;
+  left: -0.25rem;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #999;
+}
+.radio .helper::before, .radio .helper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  -webkit-transition: -webkit-transform 0.28s ease;
+  transition: -webkit-transform 0.28s ease;
+  transition: transform 0.28s ease;
+  transition: transform 0.28s ease, -webkit-transform 0.28s ease;
+  border-radius: 50%;
+  border: 0.125rem solid currentColor;
+}
+.radio .helper::after {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background-color: #ff5722;
+  border-color: #ff5722;
+}
+.radio label:hover .helper {
+  color: #ff5722;
+}
+.radio input:checked ~ .helper::after {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+.radio input:checked ~ .helper::before {
+  color: #ff5722;
+}
+
+.checkbox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.checkbox .helper {
+  color: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  z-index: 0;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.0625rem;
+  -webkit-transition: border-color 0.28s ease;
+  transition: border-color 0.28s ease;
+}
+.checkbox .helper::before, .checkbox .helper::after {
+  position: absolute;
+  height: 0;
+  width: 0.2rem;
+  background-color: #ff5722;
+  display: block;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  border-radius: 0.25rem;
+  content: '';
+  -webkit-transition: opacity 0.28s ease, height 0s linear 0.28s;
+  transition: opacity 0.28s ease, height 0s linear 0.28s;
+  opacity: 0;
+}
+.checkbox .helper::before {
+  top: 0.65rem;
+  left: 0.38rem;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  box-shadow: 0 0 0 0.0625rem #fff;
+}
+.checkbox .helper::after {
+  top: 0.3rem;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.checkbox label:hover .helper {
+  color: #ff5722;
+}
+.checkbox input:checked ~ .helper {
+  color: #ff5722;
+}
+.checkbox input:checked ~ .helper::after, .checkbox input:checked ~ .helper::before {
+  opacity: 1;
+  -webkit-transition: height 0.28s ease;
+  transition: height 0.28s ease;
+}
+.checkbox input:checked ~ .helper::after {
+  height: 0.5rem;
+}
+.checkbox input:checked ~ .helper::before {
+  height: 1.2rem;
+  -webkit-transition-delay: 0.28s;
+          transition-delay: 0.28s;
+}
+
+/*.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: 1rem;
+}*/
+
+.has-error .legend.legend, .has-error.form-group .control-label.control-label {
+  color: #d9534f;
+}
+.has-error.form-group .form-help,
+.has-error.form-group .helper, .has-error.checkbox .form-help,
+.has-error.checkbox .helper, .has-error.radio .form-help,
+.has-error.radio .helper, .has-error.form-radio .form-help,
+.has-error.form-radio .helper {
+  color: #d9534f;
+}
+.has-error .bar::before {
+  background: #d9534f;
+  left: 0;
+  width: 100%;
+}
+
+	
+/* ==================== */
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align:middle;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
